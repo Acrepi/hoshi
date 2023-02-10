@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+	<head>
+		<title>HOSHI</title>
+		<link rel="icon" href="assets/logo3.png" type="image/gif" sizes="128x128">
+		<meta name="author" content="Michał Rymer">
+		<meta charset="utf-8">
+		<meta name="google" content="notranslate">
+		<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+		<link rel="stylesheet" href="styles.css">
+		<script src="scripts/scripts.js"></script>
+		<script src="scripts/localstorage.js"></script>
+		<script src="scripts/cookies.js"></script>
+		<script src="scripts/mascot.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<body onload="reloadRatesAndItems(), showWelcomeAlert()">
+		<div class="bodyHolder">
+			<div class="mainBody">
+
+				<!-- HEADER -->
+				<header class="banner">
+					<div class="logoHolder">
+						<div class="logo">星</div>
+						<div class="logoText">
+							<span><span>WELCOME T</span>O</span>
+							<h1>HOSHI</h1>
+
+						</div>
+					</div>
+				</header>
+
+				<!-- ADD FIGURES -->
+				<section>
+					<h2>Add Item</h2>
+					<hr>
+					<div class="content addFiguresContent">
+						<input type="text" placeholder="month" class="input" id="addMonth">
+						<input type="text" placeholder="year" class="input" id="addYear">
+						<input type="text" placeholder="name" class="input" id="addName">
+						<input type="text" placeholder="price" class="input" id="addPrice">
+						<!--<input type="text" placeholder="cur." class="input" id="addCurrency">-->
+						<select class="input" id="addCurrency">
+							<option value="AUD">AUD</option>
+							<option value="CAD">CAD</option>
+							<option value="CNY">CNY</option>
+							<option value="GBP">GBP</option>
+							<option value="JPY" selected="selected">JPY</option>
+							<option value="PLN">PLN</option>
+							<option value="USD">USD</option>
+						</select>
+						<input type="text" placeholder="qty." value="1" class="input" id="addQuantity">
+						<input type="text" placeholder="shop" class="input" id="addShop">
+						<input type="text" placeholder="hyperlink" class="input" id="addLink">
+						<button class="contentButton rightButton" onclick="addItem()">ADD</button>
+					</div>
+				</section>
+
+				<!-- SEARCH FIGURES -->
+				<section>
+					<h2>All Items</h2>
+					<hr>
+					<div class="content searchFiguresContent">
+						<div class="columnNames allFiguresNames">
+							<div>MONTH</div>
+							<div>YEAR</div>
+							<div>NAME</div>
+							<div>PRICE</div>
+							<div>CUR.</div>
+							<div>QTY.</div>
+							<div>SHOP</div>
+							<div>HYPERLINK</div>
+							<div></div>
+						</div>
+
+						<div class="scrollDiv" id="listHolder">
+							<div class="table" id="list">
+
+								<!--EXAMPLE (OLD)-->
+								<!--
+								<div class="row" id="item1" style="display: block;">
+									<div class="itemContentHolder" id="item1ContentHolder1">
+
+
+										<div class="itemMonth itemCell" id="item1MonthHolder">
+											<span class="pointer" onclick="" id="item1Month" style="display: none;">
+												month
+											</span>
+											<input type="text" placeholder="month" class="input itemMonthEdit" id="item1MonthEdit" onfocusout="" style="display: block;">
+										</div>
+
+
+										<div class="itemYear itemCell" id="item1YearHolder">
+											<span class="pointer" onclick="" id="item1Year" style="display: none;">
+												2022
+											</span>
+											<input type="text" placeholder="year" class="input itemYearEdit" id="item1YearEdit" onfocusout="">
+										</div>
+
+
+										<div class="itemCell itemNameHolder" id="item1NameHolderHolder">
+											<div class="itemName" id="item1NameHolder">
+												<span class="pointer" onclick="" id="item1Name" style="display: none;">
+													asdwasdddddddddddddddddd ddddddddd asd
+												</span>
+												<input type="text" placeholder="name" class="input itemNameEdit" id="item1NameEdit" onfocusout="">
+											</div>
+										</div>
+
+
+										<div class="itemPrice itemCell" id="item1PriceHolder">
+											<span class="pointer" onclick="" id="item1Price" style="display: none;">
+												price
+											</span>
+											<input type="text" placeholder="price" class="input itemPriceEdit" id="item1PriceEdit" onfocusout="">
+										</div>
+
+
+										<div class="itemCurrency itemCell" id="item1CurrencyHolder">
+											<span class="pointer" onclick="" id="item1Currency" style="display: none;">
+												jpy
+											</span>
+											<input type="text" placeholder="cur." class="input itemCurrencyEdit" id="item1CurrencyEdit" onfocusout="">
+										</div>
+
+
+										<div class="itemShop itemCell" id="item1ShopHolder">
+											<span class="pointer" onclick="" id="item1Shop" style="display: none;">
+												Amiami
+											</span>
+											<input type="text" placeholder="shop" class="input itemShopEdit" id="item1ShopEdit" onfocusout="">
+										</div>
+
+
+										<div class="itemLink1 itemCell" id="item1Link1Holder">
+											<a href="" class="hyperlink" id="item1Link1">click here</a>
+										</div>
+
+										<div class="itemLink2 itemCell" id="item1Link2Holder">
+											<span class="pointer" onclick="" id="item1Link2" style="display: none;">
+												www.amiami.com/item=asdwasd21d2ed12d212e2
+											</span>
+											<input type="text" placeholder="hyperlink" class="input itemLink2Edit" id="item1Link2Edit" onfocusout="">
+										</div>
+
+									</div>
+
+
+									<div class="itemButtonHolder" id="item2ButtonHolder">
+										<a class="itemButton" id="item2Button" onclick="deleteItem(1)">DELETE</a>
+									</div>
+								</div>
+								-->
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- MONTHLY SUMMARY -->
+				<section>
+					<h2>Monthly Summary</h2>
+					<hr>
+					<div class="content .monthlySummaryContent">
+						<div class="monthlyOptions">
+							<div>
+								Tax:
+							</div>
+							<div>
+								<input type="text" placeholder="tax" value="23" class="input" id="setTax">
+							</div>
+							<div>
+								%
+							</div>
+
+							<div>
+								Delivery cost per shop:
+							</div>
+							<div>
+								<input type="text" placeholder="delivery price" value="1500" class="input" id="setDeliveryPrice">
+								<select class="input" id="setDeliveryCurrency">
+									<option value="AUD">AUD</option>
+									<option value="CAD">CAD</option>
+									<option value="CNY">CNY</option>
+									<option value="GBP">GBP</option>
+									<option value="JPY" selected="selected">JPY</option>
+									<option value="PLN">PLN</option>
+									<option value="USD">USD</option>
+								</select>
+							</div>
+
+							<div>
+								Desired currency:
+							</div>
+							<div>
+								<select class="input" id="setDesiredCurrency">
+									<option value="AUD">AUD</option>
+									<option value="CAD">CAD</option>
+									<option value="CNY">CNY</option>
+									<option value="GBP">GBP</option>
+									<option value="JPY">JPY</option>
+									<option value="PLN">PLN</option>
+									<option value="USD" selected="selected">USD</option>
+								</select>
+							</div>
+
+							<button class="contentButton rightButton" onclick="refreshTable(1)">CALCULATE</button>
+						</div>
+
+						<div class="columnNames monthlySummaryNames">
+							<div>MONTH</div>
+							<div>YEAR</div>
+							<div>SHOPS</div>
+							<div>PRICE</div>
+							<div>TAX</div>
+							<div>DELIVERY</div>
+							<div></div>
+							<div>FINAL PRICE</div>
+							<div></div>
+						</div>
+
+						<div class="scrollDiv scrollDivSummary" id="listHolder2">
+							<div class="table" id="list2">
+
+								<!-- EXAMPLE -->
+								<!--
+								<div class="row">
+									<div class="itemCell itemMonth"><span class="auto">05</span></div>
+									<div class="itemCell itemYear"><span class="auto">2023</span></div>
+									<div class="itemCell itemShops"><span class="auto">1</span></div>
+									<div class="itemCell itemMonthlyPrice"><span class="auto">500 PLN</span></div>
+									<div class="itemCell itemTax"><span class="auto">115 PLN</span></div>
+									<div class="itemCell itemDelivery"><span class="auto">60 PLN</span></div>
+									<div class="itemCell itemDivider"></div>
+									<div class="itemCell itemFinalPrice"><span class="auto">675 PLN</span></div>
+								</div>
+								-->
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- FILE HANDLING -->
+				<section>
+					<h2>Import/Export File</h2>
+					<hr>
+					<div class="content">
+						<button class="contentButton leftButton" id="importButton" onclick="importOptions()">IMPORT</button>
+						<input type="file" accept=".txt" id="importInput" onchange="importFile()">
+						<button class="contentButton leftButton" id="exportButton" onclick="exportFile()">EXPORT</button>
+					</div>
+				</section>
+
+				<!-- FOOTER -->
+				<footer>
+					Website made by Michał Rymer<br>
+					All rights reserved © 2023
+				</footer>
+			</div>
+		</div>
+
+		<div class="sideBody" id="sideBody" onclick="mascotTap()"/>
+	</body>
+</html>

@@ -1,0 +1,546 @@
+:root {
+  --moonGray1: #3e4043;
+  --moonGray1Dark: #292b2d;
+  --moonGray1Darker: #0f1011;
+  --moonGray1DarkerShadow: #0f1011e3;
+  --starOrange1: #edab3b;
+  --starOrange1Dark: #bd8422;
+  --white1: #ffffff;
+  --white2: #dedede;
+  --gray1: #595c62;
+  --blue1: #39beff;
+  --blue1Dark: #2b91c4;
+}
+
+body {
+  background-color: var(--moonGray1Darker);
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+}
+
+hr{
+  border: 1px solid var(--moonGray1Dark);
+}
+
+.bodyHolder{
+  margin: 0 auto;
+	width: 1300px;
+}
+
+.mainBody{
+	background-color: var(--moonGray1Dark);
+	width: 1000px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.banner {
+  background-color: var(--moonGray1);
+  color: var(--white1);
+  width: 100%;
+  text-align: center;
+  padding: 17px 0 20px 0;
+  margin-bottom: 10px;
+  font-family: Arial;
+  font-size: 16px;
+}
+
+.logoHolder{
+  width: 315px;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+.logo{
+  height: 100px;
+  width: 100px;
+  border: 4px solid var(--starOrange1);
+  background-color: var(--moonGray1Dark);
+  border-radius: 20px;
+  line-height: 100px;
+  font-size: 70px;
+  float: left;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.logoText{
+  width: 160px;
+  margin: 23px 0 0 10px;
+  float: left;
+}
+
+.logoText span:nth-child(1){
+  font-size: 18px;
+}
+
+.logoText span:nth-child(1) span{
+  letter-spacing: 3px;
+}
+
+.logoText h1{
+  font-weight: normal;
+  line-height: 40px;
+	font-size: 49px;
+	color: var(--white1);
+	margin: 0;
+	text-align: center;
+}
+
+section{
+  padding: 20px 2%;
+  overflow: hidden;
+  background-color: var(--moonGray1);
+  margin-bottom: 10px;
+  color: var(--white1);
+}
+
+section h2{
+  font-size: 30px;
+  color: var(--starOrange1);
+  font-weight: normal;
+  margin: 0;
+}
+
+.content{
+  width: 100%;
+  margin-top: 18px;
+  overflow: hidden;
+}
+
+.input{
+  float: left;
+  padding: 0 6px;
+  border: 2px solid var(--moonGray1Dark);
+  outline: 0;
+  background-color: var(--moonGray1Dark);
+  color: var(--white1);
+  height: 25px;
+  font-size: 15px;
+  font-family: Arial;
+  margin-left: 2px;
+}
+.input:focus{
+  border: 2px solid var(--starOrange1);
+}
+.addFiguresContent .input:nth-child(1){
+  margin-left: 0px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.addFiguresContent .input:nth-last-child(2){
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#addMonth, #addYear{
+  width: 60px;
+}
+#addPrice, #addShop, #setTax, #setDeliveryPrice{
+  width: 80px;
+}
+#addName{
+  width: 190px;
+}
+#addCurrency, #setDeliveryCurrency, #setDesiredCurrency{
+  width: 60px;
+  height: 28.5px;
+}
+#addQuantity{
+  width: 44px;
+}
+#addLink{
+  width: 143px;
+}
+
+.contentButton{
+  border-radius: 5px;
+  border: 2px solid var(--moonGray1Dark);
+  outline: 0;
+  background-color: var(--moonGray1Dark);
+  color: var(--white1);
+  height: 29px;
+  width: 111px;
+  font-size: 15px;
+  font-family: Arial;
+  cursor: pointer;
+  font-weight: bold;
+}
+.contentButton:hover{
+  border: 2px solid var(--starOrange1);
+}
+.contentButton:active{
+  border: 2px solid var(--starOrange1Dark);
+  color: var(--white2);
+}
+
+.rightButton{
+  float: right;
+}
+
+.leftButton{
+  float: left;
+}
+
+.columnNames{
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 13px;
+}
+
+.columnNames div{
+  float: left;
+  border: 2px solid var(--moonGray1Dark);
+  border-left: 0;
+  height: 18px;
+  padding: 7px 0;
+  font-size: 15px;
+}
+.columnNames div:nth-child(1){
+  border-left: 2px solid var(--moonGray1Dark);
+  width: 74px;
+}
+.columnNames div:nth-child(2), .monthlySummaryNames div:nth-child(3){
+  width: 76px;
+}
+.allFiguresNames div:nth-child(4), .allFiguresNames div:nth-child(7){
+  width: 96px;
+}
+.allFiguresNames div:nth-child(3){
+  width: 206px;
+}
+.allFiguresNames div:nth-child(5), .allFiguresNames div:nth-child(6){
+  width: 60px;
+}
+.allFiguresNames div:nth-child(8){
+  width: 157px;
+}
+.allFiguresNames div:nth-child(9){
+  width: 115px;
+}
+.monthlySummaryNames div:nth-child(4), .monthlySummaryNames div:nth-child(5), .monthlySummaryNames div:nth-child(6){
+  width: 156px;
+}
+.monthlySummaryNames div:nth-child(8){
+  width: 222px;
+}
+.monthlySummaryNames div:nth-child(7), .monthlySummaryNames div:nth-child(9){
+  width: 12px;
+}
+
+.scrollDiv{
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: var(--moonGray1Dark);
+  height: 392px;
+}
+
+.scrollDivSummary{
+  height: 182px;
+}
+
+.table{
+  border: 1px solid var(--moonGray1);
+  border-left: 0;
+  border-right: 0;
+
+  /*
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  */
+}
+
+.row{
+  border: 1px solid var(--moonGray1);
+  border-left: 0;
+  border-right: 0;
+  background-color: var(--moonGray1Dark);
+  overflow: hidden;
+  height: 28px;
+}
+
+.itemContentHolder{
+  float: left;
+  overflow: hidden;
+}
+
+.itemCell{
+  float: left;
+  overflow: hidden;
+  border-right: 2px solid var(--moonGray1);
+  height: 28px;
+  font-size: 15px;
+  line-height: 29px;
+}
+
+.itemMonth, .itemYear, .itemShops{
+  width: 76px;
+}
+
+.itemMonth, .itemYear, .itemPrice, .itemQuantity{
+  text-align: right;
+}
+
+.itemShops, .itemMonthlyPrice, .itemTax, .itemDelivery, .itemFinalPrice{
+  text-align: center;
+}
+
+.itemPrice, .itemShop{
+  width: 96px;
+}
+
+.itemNameHolder{
+  width: 206px;
+}
+
+.itemName{
+  width: 1000px;
+}
+
+.itemCurrency, .itemQuantity{
+  width: 60px;
+}
+
+.itemLink1{
+  width: 76px;
+  text-align: center;
+}
+
+.itemLink2{
+  width: 79px;
+}
+
+.itemMonthlyPrice, .itemTax, .itemDelivery{
+  width: 156px;
+}
+
+.itemDivider{
+  width: 12px;
+}
+
+.itemFinalPrice{
+  width: 220px;
+  border-right: 0;
+}
+
+.itemButtonHolder{
+  float: left;
+  text-align: center;
+  width: 100px;
+  padding-top: 1px;
+  height: 26px;
+  line-height: 27px;
+  font-size: 15px;
+}
+
+.itemButton{
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--starOrange1);
+
+	-webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.itemButton:active{
+  color: var(--starOrange1Dark);
+}
+
+.pointer{
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.auto{
+  margin: 0 10px;
+}
+
+.hyperlink{
+  color: var(--blue1);
+}
+.hyperlink:active{
+  color: var(--blue1Dark);
+}
+
+.itemCell .input{
+  padding: 0 8px;
+  height: 24px;
+  margin: 0;
+}
+
+.itemMonthEdit, .itemYearEdit{
+  width: 56px;
+  text-align: right;
+}
+
+.itemNameEdit{
+  width: 186px;
+}
+
+.itemPriceEdit, .itemShopEdit{
+  width: 76px;
+}
+.itemPriceEdit{
+  text-align: right;
+}
+
+.itemCell .itemCurrencyEdit{
+  height: 28px;
+  width: 60px;
+}
+
+ .itemQuantityEdit{
+   width: 40px;
+   text-align: right;
+ }
+
+.itemHyperlinkEdit{
+  width: 137px;
+}
+
+.monthlyOptions{
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.monthlyOptions div{
+  float: left;
+  line-height: 29px;
+  margin-right: 2px;
+}
+.monthlyOptions div:nth-child(2n+1){
+  margin-right: 50px;
+}
+.monthlyOptions div:nth-child(1){
+  margin-right: 2px;
+}
+.monthlyOptions div:nth-child(3){
+  margin-left: 2px;
+}
+
+#setTax, #setDesiredCurrency{
+  border-radius: 5px;
+}
+
+#setDeliveryPrice{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#setDeliveryCurrency{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.summaryCell:nth-child(){
+  color: var(--starOrange1);
+}
+
+#importButton, #exportButton{
+  margin-right: 6px;
+}
+
+#importInput{
+  display: none;
+}
+
+
+footer{
+  background-color: var(--moonGray1);
+  color: var(--gray1);
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.sideBody{
+  width: 160px;
+  height: 300px;
+  position: fixed;
+  background-image: url("assets/mascot1.png");
+  background-repeat: no-repeat;
+  background-size: 160px 300px;
+  top: 100px;
+  left: 10px;
+  right: 1130px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.alertHolder{
+  width: 100%;
+  height: 100%;
+  background-color: var(--moonGray1DarkerShadow);
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.alert{
+  position: absolute;
+  top: 50%;
+  margin-top: -100px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: hidden;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--moonGray1);
+}
+
+.alertMessageTypeHolder{
+  margin: 0 auto;
+  width: 100%;
+  color: var(--starOrange1);
+  font-size: 30px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.alertMessageHolder{
+  margin: 10px auto;
+  width: 100%;
+  color: var(--white1);
+  line-height: 24px;
+  font-size: 18px;
+  overflow: hidden;
+}
+
+.alertButtonsHolder{
+  margin: 20px auto 0px auto;
+  width: 100%;
+  color: var(--white1);
+  font-size: 18px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.alertButton{
+  margin: 0 10px;
+}
+
+.orange{
+  color: var(--starOrange1);
+}
